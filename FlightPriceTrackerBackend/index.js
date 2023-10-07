@@ -12,7 +12,7 @@ app.get('/search', async (req, res) => {
     const { from, to, departDate, returnDate } = req.query;
 
     if (!from || !to || !departDate || !returnDate) {
-        res.status(400).send('Inputs are missing');
+        res.status(400).send('Missing query parameters!');
         return;
     }
 
@@ -20,7 +20,7 @@ app.get('/search', async (req, res) => {
         const data = await scrapeFlights(from, to, departDate, returnDate);
         res.send(data);
     } catch (e) {
-        res.status(500).send('Failed to scrape!');
+        res.status(500).send('Something went wrong!');
     }
 });
 
