@@ -2,7 +2,8 @@ import dayjs from 'dayjs';
 
 const url = 'http://localhost:3000';
 
-const SearchFlights = ({ from, to, departDate, returnDate }: { from: string, to: string, departDate: number, returnDate: number}) => {
+
+const SearchFlights = async ({ from, to, departDate, returnDate }: { from: string, to: string, departDate: number, returnDate: number}) => {
   try {
     // @ts-ignore
     const response = await fetch(
