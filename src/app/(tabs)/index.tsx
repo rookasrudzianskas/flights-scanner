@@ -3,11 +3,21 @@ import SearchForm from "../../components/SearchForm";
 import {LinearGradient} from "expo-linear-gradient";
 import items from "../../../assets/data.json";
 import FlightOptionItem from "../../components/FlightOptionItem";
+import {useState} from "react";
+import SearchFlights from "../../services/api";
 
 export default function TabOneScreen() {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
+
   const onSearch = async (data: any) => {
-    console.log(data);
-  }
+    setLoading(true);
+    setItems([]);
+
+    const response = await SearchFlights(data);
+    setItems(response.data);
+    setLoading(false);
+  };
 
   return (
     <LinearGradient colors={['white', '#f1f6fc']} className="flex flex-1 pt-16">
