@@ -1,5 +1,6 @@
 import {StyleSheet, Text, View} from 'react-native';
 import SearchForm from "../../components/SearchForm";
+import {LinearGradient} from "expo-linear-gradient";
 
 export default function TabOneScreen() {
   const onSearch = async (data: any) => {
@@ -7,11 +8,11 @@ export default function TabOneScreen() {
   }
 
   return (
-    <View className="pt-16">
+    <LinearGradient colors={['white', '#f1f6fc']} className="flex flex-1 pt-16">
       <SearchForm
         onSearch={onSearch}
       />
-    </View>
+    </LinearGradient>
   );
 }
 
