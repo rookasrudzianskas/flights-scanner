@@ -19,7 +19,6 @@ const FlightOptionItem = ({flight}) => {
         <View style={styles.route}>
           <Text style={styles.time}>
             {flight.to.departAt}{' '}
-
             <Ionicons name="airplane" size={16} color="gray" />{' '}
             {flight.to.arriveAt}
           </Text>
