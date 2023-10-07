@@ -1,11 +1,16 @@
 import {StyleSheet, Text, View} from 'react-native';
-import {StatusBar} from "expo-status-bar";
 import SearchForm from "../../components/SearchForm";
 
 export default function TabOneScreen() {
+  const onSearch = async (data: any) => {
+    console.log(data);
+  }
+
   return (
     <View className="pt-16">
-      <SearchForm onSearch={() => {}} />
+      <SearchForm
+        onSearch={onSearch}
+      />
     </View>
   );
 }
