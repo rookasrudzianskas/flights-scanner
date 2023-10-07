@@ -50,7 +50,6 @@ const SearchForm = ({onSearch}) => {
         />
       </View>
 
-
       <Button title="Search" onPress={onSearchPress} />
     </View>
   );
