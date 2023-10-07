@@ -2,7 +2,6 @@ import dayjs from 'dayjs';
 
 const url = 'http://localhost:3000';
 
-
 const SearchFlights = async ({ from, to, departDate, returnDate }: { from: string, to: string, departDate: number, returnDate: number}) => {
   try {
     // @ts-ignore
